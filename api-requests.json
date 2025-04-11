@@ -1,0 +1,98 @@
+{
+  "v": 6,
+  "name": "IA Solicitations",
+  "folders": [],
+  "requests": [
+    {
+      "v": "11",
+      "name": "Direct Message for Chat Model",
+      "method": "GET",
+      "endpoint": "http://laravel-opeai.test/chat-model",
+      "params": [
+        {
+          "key": "search",
+          "value": "Quem descobriu o Brasil?",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "endpoint": "http://laravel-opeai.test/api/bank-slip-analizer",
+      "name": "Analizar Imagem",
+      "params": [],
+      "headers": [],
+      "method": "POST",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "multipart/form-data",
+        "body": [
+          {
+            "key": "document",
+            "value": [
+              {}
+            ],
+            "active": true,
+            "isFile": true
+          }
+        ]
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "endpoint": "http://laravel-opeai.test/api/proof-payment-analizer",
+      "name": "Analizar Imagem",
+      "params": [],
+      "headers": [],
+      "method": "POST",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "preRequestScript": "",
+      "testScript": "",
+      "body": {
+        "contentType": "multipart/form-data",
+        "body": [
+          {
+            "key": "image",
+            "value": [
+              {}
+            ],
+            "active": true,
+            "isFile": true
+          }
+        ]
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "headers": [],
+  "_ref_id": "coll_m9cqkljh_5f18847b-a282-4c9c-ad82-785ec68b0e15"
+}

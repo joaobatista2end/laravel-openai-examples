@@ -8,15 +8,8 @@ Este projeto é uma API Laravel que utiliza a OpenAI para diferentes análises e
 Endpoint para interação com o modelo de chat GPT-4.
 
 ```http
-GET /api/chat-model
-
-Query Parameters:
-  search: string (required) - O texto para interagir com o modelo
-
-### Exemplo de Requisição
 GET /api/chat-model?search=Qual é a capital do Brasil?
 
-### Resposta
 {
     "content": "A capital do Brasil é Brasília."
 }
@@ -34,22 +27,12 @@ Endpoint para verificar se uma imagem é um comprovante de pagamento válido.
 POST /api/proof-payment-analizer
 Content-Type: multipart/form-data
 
-Body:
-  image: file (required) - Imagem do comprovante (jpeg, png, jpg, gif, max: 2MB)
-
-### Exemplo de Requisição
-POST /api/proof-payment-analizer
-Content-Type: multipart/form-data
-
 --boundary
 Content-Disposition: form-data; name="image"; filename="comprovante.jpg"
 Content-Type: image/jpeg
 
 [Conteúdo binário da imagem]
 --boundary--
-
-### Resposta
-"sim" ou "não"
 ```
 
 **Detalhes do Controller (ProofPaymentAnalizerController)**:
@@ -65,24 +48,12 @@ Endpoint para verificar se um documento PDF é um boleto bancário.
 POST /api/bank-slip-analizer
 Content-Type: multipart/form-data
 
-Body:
-  document: file (required) - Arquivo PDF do boleto (max: 4MB)
-
-### Exemplo de Requisição
-POST /api/bank-slip-analizer
-Content-Type: multipart/form-data
-
 --boundary
 Content-Disposition: form-data; name="document"; filename="boleto.pdf"
 Content-Type: application/pdf
 
 [Conteúdo binário do PDF]
 --boundary--
-
-### Resposta
-{
-    "resposta": "sim" ou "não"
-}
 ```
 
 **Detalhes do Controller (BankSlipAnalizerController)**:
@@ -101,3 +72,10 @@ Content-Type: application/pdf
 2. Execute `composer install`
 3. Configure o arquivo .env com suas credenciais da OpenAI
 4. Execute `php artisan serve`
+
+## Coleção de Requisições
+O projeto inclui um arquivo `api-requests.json` que contém todas as requisições pré-configuradas para testar os endpoints. Este arquivo pode ser importado tanto no Coopscotch quanto no Postman, facilitando o teste e a integração com a API.
+
+### Como Importar
+- **Coopscotch**: Abra o Coopscotch, vá em "Collections" > "Import" e selecione o arquivo `api-requests.json`
+- **Postman**: Abra o Postman, clique em "Import" > "File" > "Upload Files" e selecione o arquivo `api-requests.json`
